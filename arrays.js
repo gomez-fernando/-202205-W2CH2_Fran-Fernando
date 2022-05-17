@@ -4,5 +4,12 @@ export function length(array) {
 export function push(array, element) {
     //const add = (array[array.length] = element);
     array[array.length] = element;
-    return array;
+    return array.length;
 }
+
+let array = ['pepe', 2];
+let element = 'pepa';
+
+push(array, element)
+
+console.log(array.length);
