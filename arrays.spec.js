@@ -2,21 +2,21 @@ import { length, push } from './arrays.js';
 
 describe('Given length function', () => {
     //Function lentgh
-    // describe('When array have a one element', () => {
-    //     test('should ', () => {
-    //         //ARANGE
+    describe('When array have a one element', () => {
+        test('should ', () => {
+            //ARANGE
 
-    //         const array = ['pepe', 2];
-    //         const expectedResult = 2;
-    //         //ACT
+            const array = ['pepe', 2];
+            const expectedResult = 2;
+            //ACT
 
-    //         const result = length(array);
+            const result = length(array);
 
-    //         //ASERT
+            //ASERT
 
-    //         expect(result).toBe(expectedResult);
-    //     });
-    // });
+            expect(result).toBe(expectedResult);
+        });
+    });
     //Function Add
 
     describe('When array add  one element', () => {

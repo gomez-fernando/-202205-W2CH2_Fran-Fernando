@@ -9,6 +9,8 @@ export function push(array, element) {
 
 let array = ['pepe', 2];
 let element = 'pepa';
+  
+
 
 push(array, element)
 
