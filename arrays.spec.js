@@ -1,9 +1,8 @@
-import { length, push } from './arrays.js';
+import { length, pop, push } from './arrays.js';
 
 describe('Given length function', () => {
-    //Function lentgh
     describe('When array have a one element', () => {
-        test('should ', () => {
+        test('should show the length of the array ', () => {
             //ARANGE
 
             const array = ['pepe', 2];
@@ -17,10 +16,9 @@ describe('Given length function', () => {
             expect(result).toBe(expectedResult);
         });
     });
-    //Function Add
 
     describe('When array add  one element', () => {
-        test('should ', () => {
+        test('should add new element in the array', () => {
             //ARANGE
 
             const array = ['pepe', 2];
@@ -29,6 +27,42 @@ describe('Given length function', () => {
             //ACT
             //console.log(expectedResult);
             const result = push(array, element);
+
+            //ASERT
+
+            expect(result).toBe(expectedResult);
+        });
+    });
+
+    //Function pop
+
+    describe('When array drop one element', () => {
+        test('should show the new length', () => {
+            //ARANGE
+
+            const array = ['pepe', 2, 12];
+            const expectedResult = 12;
+            //ACT
+            //console.log(expectedResult);
+            const ejecutar = pop(array);
+            //const result = result.length;
+
+            //ASERT
+
+            expect(ejecutar).toBe(expectedResult);
+        });
+    });
+
+    describe('When array drop one element', () => {
+        test('should show modified array ', () => {
+            //ARANGE
+
+            let array = ['pepe', 2, 12];
+            const expectedResult = 2;
+            //ACT
+            //console.log(expectedResult);
+            const ejecutar = pop(array);
+            const result = array.length;
 
             //ASERT
 

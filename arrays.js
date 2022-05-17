@@ -6,12 +6,12 @@ export function push(array, element) {
     array[array.length] = element;
     return array.length;
 }
+export function pop(array) {
+    //array.length = array[array.length - 1];
+    const element = array[array.length - 1];
+    array.length = array.length - 1;
+    return element;
+    //console.log(array);
+}
 
-let array = ['pepe', 2];
-let element = 'pepa';
-  
-
-
-push(array, element)
-
-console.log(array.length);
+pop([12, 11, 15]);
