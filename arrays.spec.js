@@ -25,7 +25,7 @@ describe('Given length function', () => {
 
             const array = ['pepe', 2];
             const element = 'pepa';
-            const expectedResult = ['pepe', 2, 'pepa'];
+            const expectedResult = 3;
             //ACT
             //console.log(expectedResult);
             const result = push(array, element);
