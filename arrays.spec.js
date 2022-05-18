@@ -9,11 +9,11 @@ describe('Given length function', () => {
 
             const array = ['pepe', 2];
             const expectedResult = 2;
-            //ACT
+            // ACT
 
             const result = length(array);
 
-            //ASSERT
+            // ASSERT
 
             expect(result).toBe(expectedResult);
         });
@@ -22,9 +22,9 @@ describe('Given length function', () => {
         test('it should return error ', () => {
             // ARRANGE
 
-            //ACT
+            // ACT
 
-            //ASSERT
+            // ASSERT
             expect(() => length(noIsArray)).toThrow(Error);
         });
     });
@@ -33,15 +33,15 @@ describe('Given length function', () => {
 describe('Given push function', () => {
     describe('When array have 2 elements', () => {
         test('it should show 3 elements', () => {
-            //ARRANGE
+             // ARRANGE
 
             const array = ['pepe', 2];
             const element = 'pepa';
             const expectedResult = 3;
-            //ACT
+            // ACT
             const result = push(array, element);
 
-            //ASSERT
+            // ASSERT
 
             expect(result).toBe(expectedResult);
         });
@@ -50,9 +50,9 @@ describe('Given push function', () => {
         test('it should return error ', () => {
             // ARRANGE
 
-            //ACT
+            // ACT
 
-            //ASSERT
+            // ASSERT
             expect(() => push(noIsArray)).toThrow(Error);
         });
     });
@@ -61,14 +61,14 @@ describe('Given push function', () => {
 describe('Given pop function', () => {
     describe('When array have 3 elements', () => {
         test('it should show the dropped element', () => {
-            //ARRANGE
+             // ARRANGE
 
             const array = ['pepe', 2, 12];
             const expectedResult = 12;
-            //ACT
+            // ACT
             const ejecutar = pop(array);
 
-            //ASSERT
+            // ASSERT
 
             expect(ejecutar).toBe(expectedResult);
         });
@@ -76,15 +76,15 @@ describe('Given pop function', () => {
 
     describe('When array have 3 elements', () => {
         test("should show array's length -> 2 ", () => {
-            //ARRANGE
+             // ARRANGE
 
             let array = ['pepe', 2, 12];
             const expectedResult = 2;
-            //ACT
+            // ACT
             const ejecutar = pop(array);
             const result = array.length;
 
-            //ASSERT
+            // ASSERT
 
             expect(result).toBe(expectedResult);
         });
@@ -93,9 +93,9 @@ describe('Given pop function', () => {
         test('it should return error ', () => {
             // ARRANGE
 
-            //ACT
+            // ACT
 
-            //ASSERT
+            // ASSERT
             expect(() => push(noIsArray)).toThrow(Error);
         });
     });
@@ -104,15 +104,15 @@ describe('Given pop function', () => {
 describe('Given shift function', () => {
     describe('When array have 3 elements', () => {
         test("should show array's length -> 4", () => {
-            //ARRANGE
+             // ARRANGE
 
             let array = ['pepe', 2, 12];
             const expectedResult = 4;
-            //ACT
+            // ACT
             const result = shift(array, 'nuevo elemento');
             // const result = array.length;
 
-            //ASSERT
+            // ASSERT
 
             expect(result).toBe(expectedResult);
         });
@@ -121,9 +121,9 @@ describe('Given shift function', () => {
         test('it should return error ', () => {
             // ARRANGE
 
-            //ACT
+            // ACT
 
-            //ASSERT
+            // ASSERT
             expect(() => push(noIsArray)).toThrow(Error);
         });
     });
