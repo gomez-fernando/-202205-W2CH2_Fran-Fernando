@@ -33,7 +33,7 @@ describe('Given length function', () => {
 describe('Given push function', () => {
     describe('When array have 2 elements', () => {
         test('it should show 3 elements', () => {
-             // ARRANGE
+            // ARRANGE
 
             const array = ['pepe', 2];
             const element = 'pepa';
@@ -61,7 +61,7 @@ describe('Given push function', () => {
 describe('Given pop function', () => {
     describe('When array have 3 elements', () => {
         test('it should show the dropped element', () => {
-             // ARRANGE
+            // ARRANGE
 
             const array = ['pepe', 2, 12];
             const expectedResult = 12;
@@ -76,12 +76,12 @@ describe('Given pop function', () => {
 
     describe('When array have 3 elements', () => {
         test("should show array's length -> 2 ", () => {
-             // ARRANGE
+            // ARRANGE
 
-            let array = ['pepe', 2, 12];
+            const array = ['pepe', 2, 12];
             const expectedResult = 2;
             // ACT
-            const ejecutar = pop(array);
+            pop(array);
             const result = array.length;
 
             // ASSERT
@@ -96,7 +96,9 @@ describe('Given pop function', () => {
             // ACT
 
             // ASSERT
-            expect(() => push(noIsArray)).toThrow(Error);
+            expect(() => push(noIsArray)).toThrow(
+                'The given parameter is not an array'
+            );
         });
     });
 });
@@ -104,9 +106,9 @@ describe('Given pop function', () => {
 describe('Given shift function', () => {
     describe('When array have 3 elements', () => {
         test("should show array's length -> 4", () => {
-             // ARRANGE
+            // ARRANGE
 
-            let array = ['pepe', 2, 12];
+            const array = ['pepe', 2, 12];
             const expectedResult = 4;
             // ACT
             const result = shift(array, 'nuevo elemento');
