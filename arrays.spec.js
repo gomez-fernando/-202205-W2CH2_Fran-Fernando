@@ -1,9 +1,14 @@
 import { length, pop, push } from './arrays.js';
 
+const noIsArray = "string";
+const noArrayError = {
+    message: "The given parameter is not an array"
+};
+
 describe('Given length function', () => {
-    describe('When array have a one element', () => {
-        test('should show the length of the array ', () => {
-            //ARANGE
+    describe('When array have 2 elements', () => {
+        test('it should show the length of the array -> 2 ', () => {
+            // ARRANGE
 
             const array = ['pepe', 2];
             const expectedResult = 2;
@@ -11,62 +16,102 @@ describe('Given length function', () => {
 
             const result = length(array);
 
-            //ASERT
+            //ASSERT
 
             expect(result).toBe(expectedResult);
         });
     });
+    describe('When no array is given', () => {
+        test('it should return error ', () => {
+            // ARRANGE
 
-    describe('When array add  one element', () => {
-        test('should add new element in the array', () => {
-            //ARANGE
+            const expectedResult = "The given parameter is not an array";
+            //ACT
+
+            const result = length(noIsArray);
+
+            //ASSERT
+
+            expect(result.message).toBe(expectedResult);
+        });
+    });
+});
+
+describe('Given push function', () => {
+    describe('When array have 2 elements', () => {
+        test('it should show 3 elements', () => {
+            //ARRANGE
 
             const array = ['pepe', 2];
             const element = 'pepa';
             const expectedResult = 3;
             //ACT
-            //console.log(expectedResult);
             const result = push(array, element);
 
-            //ASERT
+            //ASSERT
 
             expect(result).toBe(expectedResult);
         });
     });
+    describe('When no array is given', () => {
+        test('it should return error ', () => {
+            // ARRANGE
 
-    //Function pop
+            const expectedResult = "The given parameter is not an array";
+            //ACT
 
-    describe('When array drop one element', () => {
-        test('should show the new length', () => {
-            //ARANGE
+            const result = push(noIsArray);
+
+            //ASSERT
+
+            expect(result.message).toBe(expectedResult);
+        });
+    });
+});
+
+describe('Given pop function', () => {
+    describe('When array have 3 elements', () => {
+        test('it should show the dropped element', () => {
+            //ARRANGE
 
             const array = ['pepe', 2, 12];
             const expectedResult = 12;
             //ACT
-            //console.log(expectedResult);
             const ejecutar = pop(array);
-            //const result = result.length;
 
-            //ASERT
+            //ASSERT
 
             expect(ejecutar).toBe(expectedResult);
         });
     });
 
-    describe('When array drop one element', () => {
-        test('should show modified array ', () => {
-            //ARANGE
+    describe('When array have 3 elements', () => {
+        test("should show array's length -> 2 ", () => {
+            //ARRANGE
 
             let array = ['pepe', 2, 12];
             const expectedResult = 2;
             //ACT
-            //console.log(expectedResult);
             const ejecutar = pop(array);
             const result = array.length;
 
-            //ASERT
+            //ASSERT
 
             expect(result).toBe(expectedResult);
+        });
+    });
+    describe('When no array is given', () => {
+        test('it should return error ', () => {
+            // ARRANGE
+
+            const expectedResult = "The given parameter is not an array";
+            //ACT
+
+            const result = pop(noIsArray);
+
+            //ASSERT
+
+            expect(result.message).toBe(expectedResult);
         });
     });
 });
