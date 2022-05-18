@@ -1,9 +1,6 @@
-import { length, pop, push } from './arrays.js';
+import { length, pop, push, shift } from './arrays.js';
 
-const noIsArray = "string";
-const noArrayError = {
-    message: "The given parameter is not an array"
-};
+const noIsArray = 'string';
 
 describe('Given length function', () => {
     describe('When array have 2 elements', () => {
@@ -25,14 +22,10 @@ describe('Given length function', () => {
         test('it should return error ', () => {
             // ARRANGE
 
-            const expectedResult = "The given parameter is not an array";
             //ACT
 
-            const result = length(noIsArray);
-
             //ASSERT
-
-            expect(result.message).toBe(expectedResult);
+            expect(() => length(noIsArray)).toThrow(Error);
         });
     });
 });
@@ -57,14 +50,10 @@ describe('Given push function', () => {
         test('it should return error ', () => {
             // ARRANGE
 
-            const expectedResult = "The given parameter is not an array";
             //ACT
 
-            const result = push(noIsArray);
-
             //ASSERT
-
-            expect(result.message).toBe(expectedResult);
+            expect(() => push(noIsArray)).toThrow(Error);
         });
     });
 });
@@ -104,14 +93,38 @@ describe('Given pop function', () => {
         test('it should return error ', () => {
             // ARRANGE
 
-            const expectedResult = "The given parameter is not an array";
             //ACT
 
-            const result = pop(noIsArray);
+            //ASSERT
+            expect(() => push(noIsArray)).toThrow(Error);
+        });
+    });
+});
+
+describe('Given shift function', () => {
+    describe('When array have 3 elements', () => {
+        test("should show array's length -> 4", () => {
+            //ARRANGE
+
+            let array = ['pepe', 2, 12];
+            const expectedResult = 4;
+            //ACT
+            const result = shift(array, 'nuevo elemento');
+            // const result = array.length;
 
             //ASSERT
 
-            expect(result.message).toBe(expectedResult);
+            expect(result).toBe(expectedResult);
+        });
+    });
+    describe('When no array is given', () => {
+        test('it should return error ', () => {
+            // ARRANGE
+
+            //ACT
+
+            //ASSERT
+            expect(() => push(noIsArray)).toThrow(Error);
         });
     });
 });
