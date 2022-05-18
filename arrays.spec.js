@@ -1,6 +1,13 @@
-import { length, pop, push, shift } from './arrays.js';
+import { length, pop, push, shift, unshift, some } from './arrays.js';
 
 const noIsArray = 'string';
+
+const biggerThan10 = (elem) => {
+    if (typeof elem === 'number' && elem > 10) {
+        return true;
+    }
+    return false;
+};
 
 describe('Given length function', () => {
     describe('When array have 2 elements', () => {
@@ -96,7 +103,7 @@ describe('Given pop function', () => {
             // ACT
 
             // ASSERT
-            expect(() => push(noIsArray)).toThrow(
+            expect(() => pop(noIsArray)).toThrow(
                 'The given parameter is not an array'
             );
         });
@@ -126,7 +133,61 @@ describe('Given shift function', () => {
             // ACT
 
             // ASSERT
-            expect(() => push(noIsArray)).toThrow(Error);
+            expect(() => shift(noIsArray)).toThrow(Error);
+        });
+    });
+});
+describe('Given unshift function', () => {
+    describe('When array have 3 elements', () => {
+        test("should show array's length -> 4", () => {
+            // ARRANGE
+
+            const array = ['pepe', 2, 12];
+            const expectedResult = 2;
+            // ACT
+            const result = unshift(array);
+            // const result = array.length;
+
+            // ASSERT
+
+            expect(result).toBe(expectedResult);
+        });
+    });
+    describe('When no array is given', () => {
+        test('it should return error ', () => {
+            // ARRANGE
+
+            // ACT
+
+            // ASSERT
+            expect(() => unshift(noIsArray)).toThrow(Error);
+        });
+    });
+});
+describe('Given some function', () => {
+    describe('When array have at least one element bigger than 10', () => {
+        test('should return true', () => {
+            // ARRANGE
+
+            const array = ['pepe', 2, 2, 9];
+            const expectedResult = false;
+            // ACT
+            const result = some(array, biggerThan10);
+            console.log(result);
+
+            // ASSERT
+
+            expect(result).toBe(expectedResult);
+        });
+    });
+    describe('When no array is given', () => {
+        test('it should return error ', () => {
+            // ARRANGE
+
+            // ACT
+
+            // ASSERT
+            expect(() => some(noIsArray)).toThrow(Error);
         });
     });
 });
